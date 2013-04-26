@@ -1,0 +1,38 @@
+extends layout
+
+block body
+  div(ng-controller='AppCtrl')
+    .bodyContainer
+      .head
+        img(src='img/cLogo.jpg')
+      header
+        nav
+          ul
+            li.button
+              a(href='home') home
+            li.button
+              a(href='members') members
+            li.button
+              a(href='scripts') scripts
+            br
+            br
+            li.button Storage
+            li.button Forum
+            li.button Wiki
+      section.content
+            div(ng-view)
+      aside.side
+        section
+          header
+            h2 Chat
+            iframe(src='http://wonderland.van-blar.com/python/chat3.py/handler')
+    div(style='clear: both;')
+    footer.footer
+      hr
+      | Copyright 2013 Aaron Van Blarcom
+    script(src='js/lib/angular/angular.js')
+    script(src='js/app.js')
+    script(src='js/services.js')
+    script(src='js/controllers.js')
+    script(src='js/filters.js')
+    script(src='js/directives.js')

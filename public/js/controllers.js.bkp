@@ -1,0 +1,30 @@
+'use strict';
+
+/* Controllers */
+
+function AppCtrl($scope, $http) {
+  $http({method: 'GET', url: '/api/name'}).
+  success(function(data, status, headers, config) {
+    $scope.name = data.name;
+  }).
+  error(function(data, status, headers, config) {
+    $scope.name = 'Error!'
+  });
+}
+
+function homeController() {}
+homeController.$inject = [];
+
+function membersController() {
+  socket.emit('getWhitelist')
+  socket.on('whitelist',finction(data){
+  $scope.whitelist = data;
+});
+
+}
+membersController.$inject = [];
+
+function scriptsController() {
+}
+scriptsController.$inject = [];
+
